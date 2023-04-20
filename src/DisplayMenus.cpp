@@ -30,11 +30,13 @@ void displayPlaylistsMenu()
 {
    cout << "----------------------------\n";
    cout << "MENU PLAYLISTS\n";
-   cout << "[1] - Adicionar playlist\n";
-   cout << "[2] - Remover playlist\n";
-   cout << "[3] - Listar todas as playlists\n";
-   cout << "[4] - Retornar ao menu principal\n";
-   cout << "[5] - Fechar app\n";
+   cout << "[1] - Gerenciar uma playlist\n";
+   cout << "[2] - Adicionar playlist\n";
+   cout << "[3] - Remover playlist\n";
+   cout << "[4] - Listar todas as playlists\n";
+   cout << "[5] - Próxima música\n";
+   cout << "[6] - Retornar ao menu principal\n";
+   cout << "[7] - Fechar app\n";
    cout << "----------------------------\n";
 }
 void displayPlaylistsMusicsMenu(Playlist pl)

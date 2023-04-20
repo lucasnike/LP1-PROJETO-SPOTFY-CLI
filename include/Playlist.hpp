@@ -10,11 +10,11 @@ using namespace std;
 class Playlist {
    private:
       string name;
-      List musics;
+      List *musics;
       int currentMusic = 0;
       
    public:
-      Playlist();
+      Playlist(string);
       ~Playlist();
       void addToPlaylist(Music*);
       void removeFromPlaylist(Music*);

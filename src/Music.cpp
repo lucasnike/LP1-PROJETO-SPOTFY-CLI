@@ -11,5 +11,5 @@ Music::Music(string title, string author)
 
 void Music::toString()
 {
-   cout << this->title << " by " << this->author << endl;
+   cout << this->title << "\033[1;31m by \033[0m" << this->author << endl;
 }
