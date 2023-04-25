@@ -22,17 +22,21 @@ public:
 
    void add(T value)
    {
-      if (tail != nullptr)
+      if (tail != nullptr && head != nullptr)
       {
+         cout << "Final da lista\n";
          this->tail->next = new Node<T>(value);
          this->tail = this->tail->next;
       }
-      else if (head == nullptr)
+      else if (head == nullptr && tail == nullptr)
       {
+         cout << "Primeiro item\n";
          this->head = new Node<T>(value);
+         this->tail = nullptr;
       }
-      else if (tail == nullptr)
+      else if (tail == nullptr && head != nullptr && this->size == 1)
       {
+         cout << "Segundo item\n";
          this->tail = new Node<T>(value);
          head->next = tail;
       }
@@ -47,7 +51,7 @@ public:
       {
          current = current->next;
       }
-      cout << current->value << endl;
+      cout << current << endl;
 
       return current->value;
    }
@@ -56,6 +60,7 @@ public:
    {
       Node<T> *current = this->head;
       Node<T> *last = nullptr;
+      int position = 0;
 
       if (size > 0)
       {
@@ -63,23 +68,42 @@ public:
          {
             last = current;
             current = current->next;
+            position++;
          }
 
          // Se foi encontrado um item para ser removido
          if (current != nullptr)
          {
             // Caso seja o primeiro
-            if (last == nullptr)
+            if (last == nullptr && this->size == 1)
             {
-               cout << "Primeiro\n";
                Node<T> *temp = current;
                this->head = current->next;
+               temp->next = nullptr;
                delete temp;
+
+               this->head = nullptr;
+               this->tail = nullptr;
+            }
+            else if (last == nullptr && this->size > 1)
+            {
+               Node<T> *temp = current;
+               this->head = current->next;
+               temp->next = nullptr;
+               delete temp;
+            }
+            else if (position + 1 == this->size)
+            {
+               cout << "Ultimo\n";
+               this->tail = nullptr;
+               current->next = nullptr;
+               delete current;
             }
             // Caso seja qualquer outro
             else
             {
                last->next = current->next;
+               current->next = nullptr;
                delete current;
             }
 
