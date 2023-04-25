@@ -7,9 +7,9 @@ include_directories( include )
 add_executable( program 
 src/Main.cpp 
 src/DisplayMenus.cpp
-src/List.cpp
 src/Menu.cpp
 src/Music.cpp
 src/Playlist.cpp
 src/MusicsManager.cpp
+src/PlaylistManager.cpp
 )

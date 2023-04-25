@@ -3,10 +3,11 @@
 #include "Menu.hpp"
 #include "DisplayMenus.hpp"
 #include "MusicManager.hpp"
+#include "PlaylistManager.hpp"
 
 using namespace std;
 
-void start(List *musics)
+void start(List<Music*> *musics, List<Playlist*> *playlists)
 {
    bool loop = true;
    int choice;
@@ -24,7 +25,7 @@ void start(List *musics)
          startMusicsMenu(musics);
          break;
       case (int)MainMenu::playlists:
-         startPlaylistMenu();
+         startPlaylistMenu(musics, playlists);
          break;
       case (int)MainMenu::end:
          loop = false;
@@ -37,7 +38,7 @@ void start(List *musics)
    }
 }
 
-void startMusicsMenu(List *musics)
+void startMusicsMenu(List<Music*> *musics)
 {
    bool loop = true;
    int choice;
@@ -52,12 +53,12 @@ void startMusicsMenu(List *musics)
       {
       case (int)MusicsMenu::add:
          addMusic(musics);
-         musics->at(0)->toString();
          break;
       case (int)MusicsMenu::remove:
-
+         removeMusic(musics);
          break;
       case (int)MusicsMenu::list:
+         listAllMusic(*musics);
          break;
 
       case (int)MusicsMenu::main:
@@ -73,7 +74,7 @@ void startMusicsMenu(List *musics)
    }
 }
 
-void startPlaylistMenu()
+void startPlaylistMenu(List<Music*> *musics, List<Playlist*> *playlists)
 {
    bool loop = true;
    int choice;
@@ -84,20 +85,20 @@ void startPlaylistMenu()
 
       cout << "Escolha: ";
       cin >> choice;
+
       switch (choice)
       {
       case (int)PlayListMenu::manage:
-         startPlaylistMusicsMenu(new Playlist("Favoritas"));
+         startPlaylistMusicsMenu(choosePlaylist(playlists));
          break;
       case (int)PlayListMenu::add:
+         addPlayList(playlists);
          break;
       case (int)PlayListMenu::remove:
-
+         removePlayList(playlists);
          break;
       case (int)PlayListMenu::list:
-         break;
-
-      case (int)PlayListMenu::next:
+         listAllPlaylists(*playlists);
          break;
       case (int)PlayListMenu::main:
          loop = false;

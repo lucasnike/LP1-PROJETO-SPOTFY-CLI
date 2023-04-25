@@ -1,17 +1,20 @@
 #include "Node.hpp"
+#include <iostream>
 
-#ifndef LISTS_HPP
-#define LISTS_HPP
+using namespace std;
+
+#ifndef LIST_HPP
+#define LIST_HPP
 
 template <typename T>
-class Lists
+class List
 {
 public:
    Node<T> *head;
    Node<T> *tail;
    int size = 0;
 
-   Lists()
+   List()
    {
       this->head = nullptr;
       this->tail = nullptr;
@@ -27,7 +30,6 @@ public:
       else if (head == nullptr)
       {
          this->head = new Node<T>(value);
-         return;
       }
       else if (tail == nullptr)
       {
@@ -45,6 +47,7 @@ public:
       {
          current = current->next;
       }
+      cout << current->value << endl;
 
       return current->value;
    }
@@ -56,7 +59,7 @@ public:
 
       if (size > 0)
       {
-         while (current != nullptr && last->value != value)
+         while (current->value != value)
          {
             last = current;
             current = current->next;
@@ -68,17 +71,19 @@ public:
             // Caso seja o primeiro
             if (last == nullptr)
             {
+               cout << "Primeiro\n";
                Node<T> *temp = current;
-               this->head = this->head->next;
+               this->head = current->next;
                delete temp;
             }
             // Caso seja qualquer outro
             else
             {
-
-               anterior->next = (*nextList)->next;
-               delete *nextList;
+               last->next = current->next;
+               delete current;
             }
+
+            this->size -= 1;
          }
       }
    }

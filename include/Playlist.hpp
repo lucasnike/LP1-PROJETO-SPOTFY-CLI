@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Music.hpp"
-#include "List.hpp"
+#include "ListaEncadeada/List.hpp"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ using namespace std;
 class Playlist {
    private:
       string name;
-      List *musics;
+      List<Music*> *musics;
       int currentMusic = 0;
       
    public:
@@ -21,6 +21,7 @@ class Playlist {
       Music next();
       void displayAllMusics();
       string getName() const { return this->name; }
+      void toString();
 };
 
 #endif

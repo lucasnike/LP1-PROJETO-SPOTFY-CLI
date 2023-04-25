@@ -1,11 +1,11 @@
 #include "Playlist.hpp"
-#include "List.hpp"
+#include "ListaEncadeada/List.hpp"
 
 #ifndef MENU_HPP
 #define MENU_HPP
 
-void start(List*);
-void startMusicsMenu(List*);
-void startPlaylistMenu();
+void start(List<Music*>*, List<Playlist*>*);
+void startMusicsMenu(List<Music*>*);
+void startPlaylistMenu(List<Music*> *musics, List<Playlist*> *playlists);
 void startPlaylistMusicsMenu(Playlist*);
 #endif
