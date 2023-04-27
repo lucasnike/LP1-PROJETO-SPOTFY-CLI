@@ -59,7 +59,7 @@ Playlist* choosePlaylist(List<Playlist *> *playlists)
 {
    if (playlists->size < 1)
    {
-      cout << "\033[1;31mNão existe nenhuma música salva\033[0m\n";
+      cout << "\033[1;31mNão existe nenhuma playlist cadastrada\033[0m\n";
       return nullptr;
    }
    int index;

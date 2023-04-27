@@ -24,19 +24,16 @@ public:
    {
       if (tail != nullptr && head != nullptr)
       {
-         cout << "Final da lista\n";
          this->tail->next = new Node<T>(value);
          this->tail = this->tail->next;
       }
       else if (head == nullptr && tail == nullptr)
       {
-         cout << "Primeiro item\n";
          this->head = new Node<T>(value);
          this->tail = nullptr;
       }
       else if (tail == nullptr && head != nullptr && this->size == 1)
       {
-         cout << "Segundo item\n";
          this->tail = new Node<T>(value);
          head->next = tail;
       }
@@ -51,8 +48,6 @@ public:
       {
          current = current->next;
       }
-      cout << current << endl;
-
       return current->value;
    }
 
@@ -79,7 +74,7 @@ public:
             {
                Node<T> *temp = current;
                this->head = current->next;
-               temp->next = nullptr;
+
                delete temp;
 
                this->head = nullptr;
@@ -89,12 +84,11 @@ public:
             {
                Node<T> *temp = current;
                this->head = current->next;
-               temp->next = nullptr;
                delete temp;
             }
+            // Último
             else if (position + 1 == this->size)
             {
-               cout << "Ultimo\n";
                this->tail = nullptr;
                current->next = nullptr;
                delete current;

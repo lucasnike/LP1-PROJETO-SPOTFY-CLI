@@ -41,11 +41,13 @@ void displayPlaylistsMenu()
 void displayPlaylistsMusicsMenu(Playlist pl)
 {
    cout << "----------------------------\n";
-   cout << "Playlist selecionada: " << pl.getName() << endl;
+   
+   cout << "Playlist selecionada: " << "\033[1;32m" << pl.getName() << "\033[0m\n" << endl;
    cout << "[1] - Adicionar músicas à playlist\n";
    cout << "[2] - Remover músicas da playlist\n";
    cout << "[3] - Listar todas as músicas da playlist\n";
-   cout << "[4] - Retornar ao menu anterior\n";
-   cout << "[5] - Fechar app\n";
+   cout << "[4] - Mostrar próxima música na playlist\n";
+   cout << "[5] - Retornar ao menu anterior\n";
+   cout << "[6] - Fechar app\n";
    cout << "----------------------------\n";
 }

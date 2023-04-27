@@ -29,8 +29,9 @@ enum class PlayListMusicsMenu
    add = 1,
    remove = 2,
    list = 3,
-   previus = 4,
-   end = 5
+   next = 4,
+   previus = 5,
+   end = 6
 };
 
 #endif

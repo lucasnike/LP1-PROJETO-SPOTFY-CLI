@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void start(List<Music*> *musics, List<Playlist*> *playlists)
+void start(List<Music *> *musics, List<Playlist *> *playlists)
 {
    bool loop = true;
    int choice;
@@ -22,7 +22,7 @@ void start(List<Music*> *musics, List<Playlist*> *playlists)
       switch (choice)
       {
       case (int)MainMenu::musics:
-         startMusicsMenu(musics);
+         startMusicsMenu(musics, playlists);
          break;
       case (int)MainMenu::playlists:
          startPlaylistMenu(musics, playlists);
@@ -38,7 +38,7 @@ void start(List<Music*> *musics, List<Playlist*> *playlists)
    }
 }
 
-void startMusicsMenu(List<Music*> *musics)
+void startMusicsMenu(List<Music *> *musics, List<Playlist *> *playlists)
 {
    bool loop = true;
    int choice;
@@ -55,7 +55,7 @@ void startMusicsMenu(List<Music*> *musics)
          addMusic(musics);
          break;
       case (int)MusicsMenu::remove:
-         removeMusic(musics);
+         removeMusic(musics, playlists);
          break;
       case (int)MusicsMenu::list:
          listAllMusic(*musics);
@@ -74,7 +74,7 @@ void startMusicsMenu(List<Music*> *musics)
    }
 }
 
-void startPlaylistMenu(List<Music*> *musics, List<Playlist*> *playlists)
+void startPlaylistMenu(List<Music *> *musics, List<Playlist *> *playlists)
 {
    bool loop = true;
    int choice;
@@ -89,7 +89,12 @@ void startPlaylistMenu(List<Music*> *musics, List<Playlist*> *playlists)
       switch (choice)
       {
       case (int)PlayListMenu::manage:
-         startPlaylistMusicsMenu(choosePlaylist(playlists));
+         Playlist *selectedPlaylist;
+         selectedPlaylist = choosePlaylist(playlists);
+         if (selectedPlaylist != nullptr)
+         {
+            startPlaylistMusicsMenu(selectedPlaylist);
+         }
          break;
       case (int)PlayListMenu::add:
          addPlayList(playlists);
@@ -133,7 +138,8 @@ void startPlaylistMusicsMenu(Playlist *pl)
          break;
       case (int)PlayListMusicsMenu::list:
          break;
-
+      case (int)PlayListMusicsMenu::next:
+         break;
       case (int)PlayListMusicsMenu::previus:
          loop = false;
          break;

@@ -21,6 +21,7 @@ class Playlist {
       Music next();
       void displayAllMusics();
       string getName() const { return this->name; }
+      List<Music*> *getMusics() const { return this->musics; }
       void toString();
 };
 

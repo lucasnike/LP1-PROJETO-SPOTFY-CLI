@@ -9,10 +9,10 @@ using namespace std;
 
 int main()
 {
-   List<Music*> *musics = new List<Music*>;
-   List<Playlist*> *playlists = new List<Playlist*>;
+   List<Music*> musics;
+   List<Playlist*> playlists;
    
-   start(musics, playlists);
+   start(&musics, &playlists);
 
    return 0;
 }
