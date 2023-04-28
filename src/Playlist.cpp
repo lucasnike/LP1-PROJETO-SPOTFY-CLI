@@ -30,25 +30,29 @@ Music Playlist::next()
       }
       else
       {
-         return Music("", "");   
+         return Music("", "");
       }
-      
    }
    else
    {
       return Music("", "");
    }
-   
 }
 
-void Playlist::displayAllMusics()
+bool Playlist::displayAllMusics(int index = 0)
 {
-   List<Music *> *musics = this->musics;
    if (musics->size > 0)
    {
-      if (musics->head->value)
+      if (index < musics->size)
       {
-         displayAllMusics();
+         musics->at(index)->toString();
+         displayAllMusics(++index);
       }
+      return true;
+   }
+   else
+   {
+      cout << "\033[1;31mNão existe nenhuma música salva na playlist\033[0m\n";
+      return false;
    }
 }

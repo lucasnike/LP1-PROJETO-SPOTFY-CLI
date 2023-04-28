@@ -14,6 +14,7 @@ private:
 public:
    Music();
    Music(string, string);
+   Music(Music*);
    string getTitle() const { return this->title; }
    string getAuthor() const { return this->author; }
    void toString();

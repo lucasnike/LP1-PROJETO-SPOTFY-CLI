@@ -16,10 +16,10 @@ class Playlist {
    public:
       Playlist(string);
       ~Playlist();
-      void addToPlaylist(Music*);
+      void addToPlaylist(Music* m) const { this->musics->add(m); }
       void removeFromPlaylist(Music*);
       Music next();
-      void displayAllMusics();
+      bool displayAllMusics(int index);
       string getName() const { return this->name; }
       List<Music*> *getMusics() const { return this->musics; }
       void toString();

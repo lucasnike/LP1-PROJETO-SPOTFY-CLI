@@ -53,8 +53,6 @@ void removeMusic(List<Music *> *musics, List<Playlist *> *playlists)
              musics->at(j)->getAuthor() == musicToRemove->getAuthor())
          {
             musics->remove(musics->at(j));
-            i = playlists->size;
-            break;
          }  
       }
    }
@@ -70,7 +68,7 @@ void listAllMusic(List<Music *> musics)
       return;
    }
    
-   cout << "\n\n";
+   cout << "\n";
 
    for (int i = 0; i < musics.size; i++)
    {
@@ -78,5 +76,5 @@ void listAllMusic(List<Music *> musics)
       musics.at(i)->toString();
    }
 
-   cout << "\n\n";
+   cout << "\n";
 }

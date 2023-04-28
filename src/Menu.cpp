@@ -4,6 +4,7 @@
 #include "DisplayMenus.hpp"
 #include "MusicManager.hpp"
 #include "PlaylistManager.hpp"
+#include "PlaylistMusicsManager.hpp"
 
 using namespace std;
 
@@ -16,8 +17,9 @@ void start(List<Music *> *musics, List<Playlist *> *playlists)
    {
       displayMainMenu();
 
-      cout << "Escolha: ";
+      cout << "\n\033[1;36mEscolha: \033[0;0m";
       cin >> choice;
+      cout << endl;
 
       switch (choice)
       {
@@ -32,7 +34,7 @@ void start(List<Music *> *musics, List<Playlist *> *playlists)
          exit(0);
          break;
       default:
-         cout << "Escolha uma opção válida\n";
+         cout << "\nEscolha uma opção válida\n";
          break;
       }
    }
@@ -47,8 +49,9 @@ void startMusicsMenu(List<Music *> *musics, List<Playlist *> *playlists)
    {
       displayMusicsMenu();
 
-      cout << "Escolha: ";
+      cout << "\n\033[1;36mEscolha: \033[0;0m";
       cin >> choice;
+      cout << endl;
       switch (choice)
       {
       case (int)MusicsMenu::add:
@@ -68,7 +71,7 @@ void startMusicsMenu(List<Music *> *musics, List<Playlist *> *playlists)
          exit(0);
          break;
       default:
-         cout << "Escolha uma opção válida\n";
+         cout << "\nEscolha uma opção válida\n";
          break;
       }
    }
@@ -83,8 +86,9 @@ void startPlaylistMenu(List<Music *> *musics, List<Playlist *> *playlists)
    {
       displayPlaylistsMenu();
 
-      cout << "Escolha: ";
+      cout << "\n\033[1;36mEscolha: \033[0;0m";
       cin >> choice;
+      cout << endl;
 
       switch (choice)
       {
@@ -93,7 +97,7 @@ void startPlaylistMenu(List<Music *> *musics, List<Playlist *> *playlists)
          selectedPlaylist = choosePlaylist(playlists);
          if (selectedPlaylist != nullptr)
          {
-            startPlaylistMusicsMenu(selectedPlaylist);
+            startPlaylistMusicsMenu(selectedPlaylist, musics);
          }
          break;
       case (int)PlayListMenu::add:
@@ -112,13 +116,13 @@ void startPlaylistMenu(List<Music *> *musics, List<Playlist *> *playlists)
          exit(0);
          break;
       default:
-         cout << "Escolha uma opção válida\n";
+         cout << "\nEscolha uma opção válida\n";
          break;
       }
    }
 }
 
-void startPlaylistMusicsMenu(Playlist *pl)
+void startPlaylistMusicsMenu(Playlist *pl, List<Music *> *musics)
 {
    bool loop = true;
    int choice;
@@ -127,16 +131,19 @@ void startPlaylistMusicsMenu(Playlist *pl)
    {
       displayPlaylistsMusicsMenu(*pl);
 
-      cout << "Escolha: ";
+      cout << "\n\033[1;36mEscolha: \033[0;0m";
       cin >> choice;
+      cout << endl;
       switch (choice)
       {
       case (int)PlayListMusicsMenu::add:
+         addMusicToPlaylist(pl, *musics);
          break;
       case (int)PlayListMusicsMenu::remove:
-
+         removeMusicFromPlayList(pl);
          break;
       case (int)PlayListMusicsMenu::list:
+         pl->displayAllMusics(0);
          break;
       case (int)PlayListMusicsMenu::next:
          break;
@@ -147,7 +154,7 @@ void startPlaylistMusicsMenu(Playlist *pl)
          exit(0);
          break;
       default:
-         cout << "Escolha uma opção válida\n";
+         cout << "\nEscolha uma opção válida\n";
          break;
       }
    }

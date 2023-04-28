@@ -7,5 +7,5 @@
 void start(List<Music*>*, List<Playlist*>*);
 void startMusicsMenu(List<Music *> *, List<Playlist *> *);
 void startPlaylistMenu(List<Music*> *musics, List<Playlist*> *playlists);
-void startPlaylistMusicsMenu(Playlist*);
+void startPlaylistMusicsMenu(Playlist*, List<Music *> *);
 #endif

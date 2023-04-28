@@ -3,6 +3,7 @@
 #ifndef PMN_HPP
 #define PMN_HPP
 
-void addMusic(Playlist *);
+void addMusicToPlaylist(Playlist *, List<Music*>);
+void removeMusicFromPlayList(Playlist *playlist);
 
 #endif
