@@ -146,6 +146,7 @@ void startPlaylistMusicsMenu(Playlist *pl, List<Music *> *musics)
          pl->displayAllMusics(0);
          break;
       case (int)PlayListMusicsMenu::next:
+         pl->next();
          break;
       case (int)PlayListMusicsMenu::previus:
          loop = false;

@@ -19,23 +19,17 @@ void Playlist::toString()
    cout << "\033[1;32m" << this->name << "\033[0m\n";
 }
 
-Music Playlist::next()
+void Playlist::next()
 {
-   if (this->musics->size > 0)
+   if (this->currentMusic < this->musics->size)
    {
-      if (this->currentMusic <= this->musics->size)
-      {
-         return *this->musics->at(currentMusic);
-         this->currentMusic += 1;
-      }
-      else
-      {
-         return Music("", "");
-      }
+
+      this->musics->at(this->currentMusic)->toString();
+      this->currentMusic += 1;
    }
    else
    {
-      return Music("", "");
+      cout << "\033[1;31mSem músicas para mostrar\033[0m\n";
    }
 }
 
