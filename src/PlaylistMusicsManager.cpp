@@ -2,6 +2,7 @@
 #include "Playlist.hpp"
 #include <iostream>
 #include "MusicManager.hpp"
+#include "TerminalColors.hpp"
 
 using namespace std;
 
@@ -9,17 +10,17 @@ void addMusicToPlaylist(Playlist *playlist, List<Music *> musics)
 {
     if (musics.size < 1)
     {
-        cout << "\033[1;31mNão existe nenhuma música salva\033[0m\n";
+        cout << str_red("\nNão existe nenhuma música salva\n");
         return;
     }
     int index;
     listAllMusic(musics);
-    cout << "Digite o número da música: ";
+    cout << str_blue("\nDigite o número da música: ");
     cin >> index;
 
     if (index > musics.size)
     {
-        cout << "\033[1;31mMúsica escolhida é inválida\033[0m\n";
+        cout << str_red("\nMúsica escolhida é inválida\n");
         return;
     }
 
@@ -31,12 +32,63 @@ void addMusicToPlaylist(Playlist *playlist, List<Music *> musics)
 void removeMusicFromPlayList(Playlist *playlist)
 {
     bool result = playlist->displayAllMusics(0);
+    if (!result)
+        return;
+
+    List<Music*> *musics = playlist->getMusics();
+    int index;
+    cout << str_blue("\nDigite o número da música: ");
+    cin >> index;
+
+    if (index > musics->size)
+    {
+        str_red("\nNúmero digitado é inválido\n");
+        return;
+    }
+    
+    index--;
+    musics->remove(musics->at(index));
+}
+
+void moveMusic(Playlist *playlist)
+{
+    List<Music*> *musics = playlist->getMusics();
+    if (musics->size < 2)
+    {
+        cout << str_red("\nÉ necessário ter duas ou mais músicas para realizar a ordenação\n");
+        return;
+    }
+    
+    bool result = playlist->displayAllMusics(0);
 
     if (!result)
         return;
-    int index;
-    cout << "Digite o número da música: ";
-    cin >> index;
     
+    int from, to;
+    cout << str_blue("\nDigite o número da música que trocará de posição: ");
+    cin >> from;
 
+    if (from > musics->size)
+    {
+        cout << str_red("\nO número da música digitado é inválido\n");
+        return;
+    }
+
+    from--;
+    Music selected = *musics->at(from);
+
+    cout << "\nMúsica selecionada: " << str_cyan(selected.getTitle() + "\n");
+
+    cout << str_blue("\nDigite para qual posiçção a música selecionada irá: ");
+    cin >> to;
+
+    if (to > musics->size)
+    {
+        cout << str_red("\nO número da música digitado é inválido\n");
+        return;
+    }
+
+    to--;
+
+    musics->move(from, to);
 }

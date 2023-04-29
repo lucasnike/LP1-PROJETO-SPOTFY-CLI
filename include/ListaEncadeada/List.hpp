@@ -1,5 +1,6 @@
 #include "Node.hpp"
 #include <iostream>
+#include "TerminalColors.hpp"
 
 using namespace std;
 
@@ -51,6 +52,17 @@ public:
       return current->value;
    }
 
+   Node<T>* at_node(int index)
+   {
+      Node<T> *current = head;
+
+      for (int i = 0; i < index; i++)
+      {
+         current = current->next;
+      }
+      return current;
+   }
+
    void remove(T value)
    {
       Node<T> *current = this->head;
@@ -69,7 +81,7 @@ public:
          // Se foi encontrado um item para ser removido
          if (current != nullptr)
          {
-            // Caso seja o primeiro
+            // Caso seja o primeiro e único
             if (last == nullptr && this->size == 1)
             {
                Node<T> *temp = current;
@@ -80,17 +92,23 @@ public:
                this->head = nullptr;
                this->tail = nullptr;
             }
+            // Primeiro com dois ou mais
             else if (last == nullptr && this->size > 1)
             {
                Node<T> *temp = current;
                this->head = current->next;
                delete temp;
             }
-            // Último
+            // Ultimo com três ou mais
+            else if(position + 1 == this->size && this->size > 2)
+            {
+               this->tail = last;
+               delete current;
+            }
+            // Último com dois
             else if (position + 1 == this->size)
             {
                this->tail = nullptr;
-               current->next = nullptr;
                delete current;
             }
             // Caso seja qualquer outro
@@ -104,6 +122,24 @@ public:
             this->size -= 1;
          }
       }
+   }
+
+   bool move(int from, int to)
+   {
+      if (size < 2)
+      {
+         return false;
+      }
+
+      Node<T> *from_node = this->at_node(from);
+      Node<T> *to_node = this->at_node(to);
+      T temp = to_node->value;
+
+      to_node->value = from_node->value;
+      from_node->value = temp;
+      
+
+      return true;
    }
 };
 

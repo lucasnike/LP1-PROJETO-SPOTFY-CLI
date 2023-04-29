@@ -4,7 +4,7 @@ project(teste VERSION 0.1 LANGUAGES CXX )
 include_directories( include )
 
 
-add_executable( program 
+add_executable( spotfy_cli 
 src/Main.cpp 
 src/DisplayMenus.cpp
 src/Menu.cpp
@@ -13,4 +13,5 @@ src/Playlist.cpp
 src/MusicsManager.cpp
 src/PlaylistManager.cpp
 src/PlaylistMusicsManager.cpp
+src/TerminalColors.cpp
 )

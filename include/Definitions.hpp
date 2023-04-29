@@ -30,8 +30,9 @@ enum class PlayListMusicsMenu
    remove = 2,
    list = 3,
    next = 4,
-   previus = 5,
-   end = 6
+   move = 5,
+   previus = 6,
+   end = 7
 };
 
 #endif

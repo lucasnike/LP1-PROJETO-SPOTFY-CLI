@@ -5,5 +5,6 @@
 
 void addMusicToPlaylist(Playlist *, List<Music*>);
 void removeMusicFromPlayList(Playlist *playlist);
+void moveMusic(Playlist *playlist);
 
 #endif

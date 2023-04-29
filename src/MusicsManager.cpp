@@ -2,6 +2,7 @@
 #include "Music.hpp"
 #include "ListaEncadeada/List.hpp"
 #include "MusicManager.hpp"
+#include "TerminalColors.hpp"
 
 using namespace std;
 
@@ -11,33 +12,33 @@ void addMusic(List<Music *> *musics)
 
    cin.ignore();
 
-   cout << "Nome: ";
+   cout << str_blue("Nome: ");
    getline(cin, nome);
 
-   cout << "Autor: ";
+   cout << str_blue("Autor: ");
    getline(cin, autor);
 
    Music *m = new Music(nome, autor);
    musics->add(m);
-   // musics->at(0)->toString();
 }
 
 void removeMusic(List<Music *> *musics, List<Playlist *> *playlists)
 {
    if (musics->size < 1)
    {
+      cout << str_red("\nAdicione músicas antes de tentar remover\n");
       return;
    }
    int index;
 
    listAllMusic(*musics);
 
-   cout << "Digite o número da música: ";
+   cout << str_blue("\nDigite o número da música: ");
    cin >> index;
 
    if (index < 1 || index > musics->size)
    {
-      cout << "Valor digitado é inválido\n";
+      cout << str_red("\nValor digitado é inválido\n");
       return;
    }
 
@@ -64,7 +65,7 @@ void listAllMusic(List<Music *> musics)
 {
    if (musics.size < 1)
    {
-      cout << "Não existe nenhuma música salva\n";
+      cout << str_red("\nNenhuma música salva\n");
       return;
    }
    

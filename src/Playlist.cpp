@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Playlist.hpp"
 #include "ListaEncadeada/List.hpp"
+#include "TerminalColors.hpp"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ Playlist::~Playlist()
 
 void Playlist::toString()
 {
-   cout << "\033[1;32m" << this->name << "\033[0m\n";
+   cout << str_green(this->name) << endl;
 }
 
 void Playlist::next()
@@ -29,7 +30,7 @@ void Playlist::next()
    }
    else
    {
-      cout << "\033[1;31mSem músicas para mostrar\033[0m\n";
+      cout << str_red("\nSem músicas para mostrar\n");
    }
 }
 
@@ -39,6 +40,7 @@ bool Playlist::displayAllMusics(int index = 0)
    {
       if (index < musics->size)
       {
+         cout << index + 1 << "º - ";
          musics->at(index)->toString();
          displayAllMusics(++index);
       }
@@ -46,7 +48,7 @@ bool Playlist::displayAllMusics(int index = 0)
    }
    else
    {
-      cout << "\033[1;31mNão existe nenhuma música salva na playlist\033[0m\n";
+      cout << str_red("\nNão existe nenhuma música salva na playlist\n");
       return false;
    }
 }

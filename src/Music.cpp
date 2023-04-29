@@ -1,4 +1,5 @@
 #include "Music.hpp"
+#include "TerminalColors.hpp"
 
 #include <iostream>
 
@@ -16,5 +17,5 @@ Music::Music(Music *music)
 
 void Music::toString()
 {
-   cout << this->title << "\033[1;31m by \033[0m" << this->author << endl;
+   cout << this->title << str_green(" by ") << this->author << endl;
 }

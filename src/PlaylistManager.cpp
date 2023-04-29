@@ -2,6 +2,7 @@
 #include "ListaEncadeada/List.hpp"
 #include "Playlist.hpp"
 #include "PlaylistManager.hpp"
+#include "TerminalColors.hpp"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ void addPlayList(List<Playlist *> *playlists)
    string name;
    cin.ignore();
 
-   cout << "Nome da playlist: ";
+   cout << str_blue("\nNome da playlist: ");
    getline(cin, name);
 
    playlists->add(new Playlist(name));
@@ -20,19 +21,19 @@ void removePlayList(List<Playlist *> *playlists)
 {
    if (playlists->size < 1)
    {
-      cout << "\033[1;31mNão existe nenhuma música salva\033[0m\n";
+      cout << str_red("\nNão existe nenhuma playlist cadastrada\n");
       return;
    }
    int index;
 
    listAllPlaylists(*playlists);
 
-   cout << "Digite o número da playlist: ";
+   cout << str_blue("\nDigite o número da playlist: ");
    cin >> index;
 
    if (index < 1 || index > playlists->size)
    {
-      cout << "Valor digitado é inválido\n";
+      cout << str_red("\nValor digitado é inválido\n");
       return;
    }
 
@@ -44,7 +45,7 @@ void listAllPlaylists(List<Playlist *> playlists)
 {
    if (playlists.size < 1)
    {
-      cout << "Não existe nenhuma música salva\n";
+      cout << str_red("\nNão existe nenhuma playlist cadastrada\n");
       return;
    }
 
@@ -59,19 +60,19 @@ Playlist* choosePlaylist(List<Playlist *> *playlists)
 {
    if (playlists->size < 1)
    {
-      cout << "\033[1;31mNão existe nenhuma playlist cadastrada\033[0m\n";
+      cout << str_red("\nNão existe nenhuma playlist cadastrada\n");
       return nullptr;
    }
    int index;
 
    listAllPlaylists(*playlists);
 
-   cout << "Digite o número da playlist: ";
+   cout << str_blue("\nDigite o número da playlist: ");
    cin >> index;
 
    if (index < 1 || index > playlists->size)
    {
-      cout << "Valor digitado é inválido\n";
+      cout << str_red("\nValor digitado é inválido\n");
       return nullptr;
    }
 
