@@ -22,7 +22,7 @@ O projeto será combilado e um arquivo chamado **spotfy_cli** será gerado autom
 ## Estruturas de pastas
 <hr/>
 
-O projeto contém duas relevantes, a pasta **src/** que contem os arquivos de implementação e **include/** que contém os arquivos de definição.
+O projeto contém duas pastas relevantes, a pasta **src/** que contem os arquivos de implementação e **include/** que contém os arquivos de definição.
 ```c++
 src
 ├── DisplayMenus.cpp
