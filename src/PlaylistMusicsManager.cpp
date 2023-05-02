@@ -25,7 +25,23 @@ void addMusicToPlaylist(Playlist *playlist, List<Music *> musics)
     }
 
     index--;
-    Music *music = new Music(musics.at(index));
+
+    Music *musicToCopy = musics.at(index);
+    List<Music *> *playlistMusics = playlist->getMusics();
+
+    for (int i = 0; i < playlistMusics->size; i++)
+    {
+        Music *current = playlistMusics->at(i);
+
+        if (current->getTitle() == musicToCopy->getTitle() &&
+            current->getAuthor() == musicToCopy->getAuthor())
+        {
+            cout << str_red("\nMúsica já está na playlist\n");
+            return;
+        }
+    }
+
+    Music *music = new Music(musicToCopy);
     playlist->addToPlaylist(music);
 }
 
@@ -35,7 +51,7 @@ void removeMusicFromPlayList(Playlist *playlist)
     if (!result)
         return;
 
-    List<Music*> *musics = playlist->getMusics();
+    List<Music *> *musics = playlist->getMusics();
     int index;
     cout << str_blue("\nDigite o número da música: ");
     cin >> index;
@@ -45,25 +61,25 @@ void removeMusicFromPlayList(Playlist *playlist)
         str_red("\nNúmero digitado é inválido\n");
         return;
     }
-    
+
     index--;
     musics->remove(musics->at(index));
 }
 
 void moveMusic(Playlist *playlist)
 {
-    List<Music*> *musics = playlist->getMusics();
+    List<Music *> *musics = playlist->getMusics();
     if (musics->size < 2)
     {
         cout << str_red("\nÉ necessário ter duas ou mais músicas para realizar a ordenação\n");
         return;
     }
-    
+
     bool result = playlist->displayAllMusics(0);
 
     if (!result)
         return;
-    
+
     int from, to;
     cout << str_blue("\nDigite o número da música que trocará de posição: ");
     cin >> from;

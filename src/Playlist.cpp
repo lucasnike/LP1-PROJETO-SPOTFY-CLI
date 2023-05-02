@@ -11,10 +11,6 @@ Playlist::Playlist(string name)
    this->name = name;
 }
 
-Playlist::~Playlist()
-{
-}
-
 void Playlist::toString()
 {
    cout << str_green(this->name) << endl;

@@ -1,12 +1,15 @@
 #ifndef DEF_HPP
 #define DEF_HPP
 
+/// @brief Enumeração para identificar os itens escolhidos no menu principal dentro do switch
 enum class MainMenu
 {
    musics = 1,
    playlists = 2,
    end = 3
 };
+
+/// @brief Enumeração para identificar os itens escolhidos no menu de gerenciamento de músicas dentro do switch
 enum class MusicsMenu
 {
    add = 1,
@@ -15,6 +18,8 @@ enum class MusicsMenu
    main = 4,
    end = 5
 };
+
+/// @brief Enumeração para identificar os itens escolhidos no menu de gerenciamento de playlists dentro do switch
 enum class PlayListMenu
 {
    manage = 1,
@@ -24,6 +29,8 @@ enum class PlayListMenu
    main = 5,
    end = 6
 };
+
+/// @brief Enumeração para identificar os itens escolhidos no menu de gerenciamento de uma playlist dentro do switch
 enum class PlayListMusicsMenu
 {
    add = 1,

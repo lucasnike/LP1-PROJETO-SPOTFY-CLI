@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SPOTFY CLI: PROJETO SPOTFY-CLI</title>
+<title>SPOTFY CLI: GERENCIADOR DE MÚSICAS E PLAYLISTS - CLI</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,10 +63,63 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">PROJETO SPOTFY-CLI </div>  </div>
+<div class="title">GERENCIADOR DE MÚSICAS E PLAYLISTS - CLI </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Projeto realizado na primeira unidade da matéria LP1 (Linguagem de programação 1) do BTI-UFRN. </p>
+<div class="textblock"><p>Antes de tudo gostaria de deixar os link do <a href="https://github.com/lucasnike/LP1-PROJETO-SPOTFY-CLI">repositório do github</a>, e da <a href="https://lucasnike.github.io/LP1-PROJETO-SPOTFY-CLI/">documentação do projeto</a> para consultas mais detalhadas. </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+O que é?</h1>
+<hr  />
+<p>O projeto se trata de uma CLI(Comand line interface), totalmente programada em C++, que oferece ferramentas pare gerenciamento de "músicas" e "playlists", com o intuito de aprender a implementar uma lista encadeada de tipo genérico. Esse projeto faz parte da primeira unidade da matéria LP1(Liguagem de programação 1) do curso BTI(Bacharelado em tecnologia da informação) da UFRN(Universidade federal do Rio Grande do Norte).</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Compilar o projeto</h1>
+<hr  />
+<p>Para compilar o projeto basta instalar o cmake, após a instalação execute o seguinte comando no terminal:</p>
+<div class="fragment"><div class="line">cmake ./CMakeLists.txt</div>
+</div><!-- fragment --><p> Esse comando irá gerar um arquivo Makefile no diretório raiz do projeto. Então ao executar: </p><div class="fragment"><div class="line">make</div>
+</div><!-- fragment --><p> O projeto será combilado e um arquivo chamado <b>spotfy_cli</b> será gerado automaticamente. </p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Estruturas de pastas</h1>
+<hr  />
+<p>O projeto contém duas pastas relevantes, a pasta <b>src/</b> que contem os arquivos de implementação e <b>include/</b> que contém os arquivos de definição. </p><div class="fragment"><div class="line"> {c++}</div>
+<div class="line">src</div>
+<div class="line">├── DisplayMenus.cpp</div>
+<div class="line">├── Main.cpp</div>
+<div class="line">├── Menu.cpp</div>
+<div class="line">├── Music.cpp</div>
+<div class="line">├── MusicsManager.cpp</div>
+<div class="line">├── Playlist.cpp</div>
+<div class="line">├── PlaylistManager.cpp</div>
+<div class="line">├── PlaylistMusicsManager.cpp</div>
+<div class="line">└── TerminalColors.cpp</div>
+</div><!-- fragment --><div class="fragment"><div class="line"> {c++}</div>
+<div class="line">include/</div>
+<div class="line">├── Definitions.hpp</div>
+<div class="line">├── DisplayMenus.hpp</div>
+<div class="line">├── ListaEncadeada</div>
+<div class="line">│   ├── List.hpp</div>
+<div class="line">│   └── Node.hpp</div>
+<div class="line">├── Menu.hpp</div>
+<div class="line">├── Music.hpp</div>
+<div class="line">├── MusicManager.hpp</div>
+<div class="line">├── Playlist.hpp</div>
+<div class="line">├── PlaylistManager.hpp</div>
+<div class="line">├── PlaylistMusicsManager.hpp</div>
+<div class="line">└── TerminalColors.hpp</div>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md4"></a>
+Menus do projeto</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Menu principal</h2>
+<p><img src="./assets/main_menu.png" alt="alt" class="inline"/></p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Menu de músicas</h2>
+<p><img src="./assets/music_menu.png" alt="alt" class="inline"/></p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Menu de playlists</h2>
+<p><img src="./assets/playlists_menu.png" alt="alt" class="inline"/></p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Menu de músicas de uma playlist</h2>
+<p><img src="./assets/playlist_musics_menu.png" alt="alt" class="inline"/> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

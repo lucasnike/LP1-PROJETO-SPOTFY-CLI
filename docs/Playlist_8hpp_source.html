@@ -76,31 +76,39 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef PLAYLIST_HPP </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef PLAYLIST_HPP</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define PLAYLIST_HPP</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classPlaylist.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlaylist.html">Playlist</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;      <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <a class="code" href="classList.html">List&lt;Music*&gt;</a> *musics;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      <span class="keywordtype">int</span> currentMusic = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <a class="code" href="classPlaylist.html">Playlist</a>(<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      ~<a class="code" href="classPlaylist.html">Playlist</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">void</span> addToPlaylist(<a class="code" href="classMusic.html">Music</a>* m)<span class="keyword"> const </span>{ this-&gt;musics-&gt;add(m); }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordtype">void</span> removeFromPlaylist(<a class="code" href="classMusic.html">Music</a>* m)<span class="keyword"> const </span>{ this-&gt;musics-&gt;remove(m); }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keywordtype">void</span> next();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordtype">bool</span> displayAllMusics(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordtype">string</span> getName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;name; }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <a class="code" href="classList.html">List&lt;Music*&gt;</a> *getMusics()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;musics; }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordtype">void</span> toString();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classPlaylist.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPlaylist.html">Playlist</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classPlaylist.html#abf45f72a84e0204cfe9f18005dff9eb7">   14</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classPlaylist.html#abf45f72a84e0204cfe9f18005dff9eb7">name</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classPlaylist.html#a1a9aac361d38592edcc28d14cc8af479">   16</a></span>&#160;   <a class="code" href="classList.html">List&lt;Music *&gt;</a> *<a class="code" href="classPlaylist.html#a1a9aac361d38592edcc28d14cc8af479">musics</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPlaylist.html#a9471330a47a40009b45aee04689bdc47">   18</a></span>&#160;   <span class="keywordtype">int</span> currentMusic = 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;   <a class="code" href="classPlaylist.html">Playlist</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classPlaylist.html#ac731c0e7672678c339f81f8e7fc4fd3d">   26</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classPlaylist.html#ac731c0e7672678c339f81f8e7fc4fd3d">addToPlaylist</a>(<a class="code" href="classMusic.html">Music</a> *m)<span class="keyword"> const </span>{ this-&gt;musics-&gt;<a class="code" href="classList.html#a2938d1339a9a259472e3ff443857172b">add</a>(m); }</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classPlaylist.html#a2b66c5b14825a2d9d8610fd7f7c442fc">   29</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classPlaylist.html#a2b66c5b14825a2d9d8610fd7f7c442fc">removeFromPlaylist</a>(<a class="code" href="classMusic.html">Music</a> *m)<span class="keyword"> const </span>{ this-&gt;musics-&gt;<a class="code" href="classList.html#aa94be7414e29a4129eeb613e8425c1c7">remove</a>(m); }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   <span class="keywordtype">void</span> next();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="keywordtype">bool</span> displayAllMusics(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classPlaylist.html#a651f663970292a49d633f475437f4839">   38</a></span>&#160;   <span class="keywordtype">string</span> <a class="code" href="classPlaylist.html#a651f663970292a49d633f475437f4839">getName</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;name; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classPlaylist.html#a888856eb86e33f8479eb3ac9f9e7c51b">   41</a></span>&#160;   <a class="code" href="classList.html">List&lt;Music *&gt;</a> *<a class="code" href="classPlaylist.html#a888856eb86e33f8479eb3ac9f9e7c51b">getMusics</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;musics; }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="keywordtype">void</span> toString();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassList_html"><div class="ttname"><a href="classList.html">List&lt; Music * &gt;</a></div></div>
+<div class="ttc" id="aclassList_html_a2938d1339a9a259472e3ff443857172b"><div class="ttname"><a href="classList.html#a2938d1339a9a259472e3ff443857172b">List::add</a></div><div class="ttdeci">void add(T value)</div><div class="ttdoc">Adiciona a lista um valor genérico.</div><div class="ttdef"><b>Definition:</b> List.hpp:29</div></div>
+<div class="ttc" id="aclassList_html_aa94be7414e29a4129eeb613e8425c1c7"><div class="ttname"><a href="classList.html#aa94be7414e29a4129eeb613e8425c1c7">List::remove</a></div><div class="ttdeci">void remove(T value)</div><div class="ttdoc">Remove um item da lista.</div><div class="ttdef"><b>Definition:</b> List.hpp:78</div></div>
 <div class="ttc" id="aclassMusic_html"><div class="ttname"><a href="classMusic.html">Music</a></div><div class="ttdef"><b>Definition:</b> Music.hpp:9</div></div>
-<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdef"><b>Definition:</b> Playlist.hpp:10</div></div>
+<div class="ttc" id="aclassPlaylist_html"><div class="ttname"><a href="classPlaylist.html">Playlist</a></div><div class="ttdef"><b>Definition:</b> Playlist.hpp:11</div></div>
+<div class="ttc" id="aclassPlaylist_html_a1a9aac361d38592edcc28d14cc8af479"><div class="ttname"><a href="classPlaylist.html#a1a9aac361d38592edcc28d14cc8af479">Playlist::musics</a></div><div class="ttdeci">List&lt; Music * &gt; * musics</div><div class="ttdoc">Lista das músicas da playlists.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:16</div></div>
+<div class="ttc" id="aclassPlaylist_html_a2b66c5b14825a2d9d8610fd7f7c442fc"><div class="ttname"><a href="classPlaylist.html#a2b66c5b14825a2d9d8610fd7f7c442fc">Playlist::removeFromPlaylist</a></div><div class="ttdeci">void removeFromPlaylist(Music *m) const</div><div class="ttdoc">Função que remove uma música da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:29</div></div>
+<div class="ttc" id="aclassPlaylist_html_a651f663970292a49d633f475437f4839"><div class="ttname"><a href="classPlaylist.html#a651f663970292a49d633f475437f4839">Playlist::getName</a></div><div class="ttdeci">string getName() const</div><div class="ttdoc">Função get da propriedade name.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:38</div></div>
+<div class="ttc" id="aclassPlaylist_html_a888856eb86e33f8479eb3ac9f9e7c51b"><div class="ttname"><a href="classPlaylist.html#a888856eb86e33f8479eb3ac9f9e7c51b">Playlist::getMusics</a></div><div class="ttdeci">List&lt; Music * &gt; * getMusics() const</div><div class="ttdoc">Retorna o ponteira para a lista de músicas da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:41</div></div>
+<div class="ttc" id="aclassPlaylist_html_abf45f72a84e0204cfe9f18005dff9eb7"><div class="ttname"><a href="classPlaylist.html#abf45f72a84e0204cfe9f18005dff9eb7">Playlist::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">Nome da playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:14</div></div>
+<div class="ttc" id="aclassPlaylist_html_ac731c0e7672678c339f81f8e7fc4fd3d"><div class="ttname"><a href="classPlaylist.html#ac731c0e7672678c339f81f8e7fc4fd3d">Playlist::addToPlaylist</a></div><div class="ttdeci">void addToPlaylist(Music *m) const</div><div class="ttdoc">Função que adiciona uma música na playlist.</div><div class="ttdef"><b>Definition:</b> Playlist.hpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

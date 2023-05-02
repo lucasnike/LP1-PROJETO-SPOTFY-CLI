@@ -11,16 +11,21 @@ template <typename T>
 class List
 {
 public:
+   /// @brief Inicio da lista encadeada
    Node<T> *head;
+   /// @brief Fim da lista encadeada
    Node<T> *tail;
+   /// @brief Guarda o tamanho atual da lista
    int size = 0;
-
+   /// @brief Construtor da List inicia tanto o head quanto o tail com nullptr
    List()
    {
       this->head = nullptr;
       this->tail = nullptr;
    }
 
+   /// @brief Adiciona a lista um valor genérico
+   /// @param value Valor a ser adicionado a lista
    void add(T value)
    {
       if (tail != nullptr && head != nullptr)
@@ -40,7 +45,9 @@ public:
       }
       this->size += 1;
    }
-
+   /// @brief Retorna o item da lista localizado no índice passado como parâmetro
+   /// @param index Índice que localiza o item que será retornado
+   /// @return Item da lista
    T at(int index)
    {
       Node<T> *current = head;
@@ -52,6 +59,9 @@ public:
       return current->value;
    }
 
+   /// @brief Retorna o nó do índice informado
+   /// @param index indice do item
+   /// @return Item localizado no índice passado como parâmetro
    Node<T>* at_node(int index)
    {
       Node<T> *current = head;
@@ -63,6 +73,8 @@ public:
       return current;
    }
 
+   /// @brief Remove um item da lista
+   /// @param value item a ser removido
    void remove(T value)
    {
       Node<T> *current = this->head;
@@ -124,6 +136,10 @@ public:
       }
    }
 
+   /// @brief Troca o valor de dois itens da lista
+   /// @param from índice do item que será movido
+   /// @param to índice para onde o item escolhido no parâmetro from será movido
+   /// @return retorna false caso o tamanho da lista seja menor que 2 e seria impossível trocar dois itens de posição, retorna true em qualquer outra situação
    bool move(int from, int to)
    {
       if (size < 2)
