@@ -6,6 +6,7 @@
 #include "PlaylistManager.hpp"
 #include "PlaylistMusicsManager.hpp"
 #include "TerminalColors.hpp"
+#include "FileManager.hpp"
 
 using namespace std;
 
@@ -32,7 +33,6 @@ void start(List<Music *> *musics, List<Playlist *> *playlists)
          break;
       case (int)MainMenu::end:
          loop = false;
-         exit(0);
          break;
       default:
          cout << str_red("\nEscolha uma opção válida\n");
@@ -67,9 +67,6 @@ void startMusicsMenu(List<Music *> *musics, List<Playlist *> *playlists)
 
       case (int)MusicsMenu::main:
          loop = false;
-         break;
-      case (int)MusicsMenu::end:
-         exit(0);
          break;
       default:
          cout << str_red("\nEscolha uma opção válida\n");
@@ -113,9 +110,6 @@ void startPlaylistMenu(List<Music *> *musics, List<Playlist *> *playlists)
       case (int)PlayListMenu::main:
          loop = false;
          break;
-      case (int)PlayListMenu::end:
-         exit(0);
-         break;
       default:
          cout << str_red("\nEscolha uma opção válida\n");
          break;
@@ -154,9 +148,6 @@ void startPlaylistMusicsMenu(Playlist *pl, List<Music *> *musics)
          break;
       case (int)PlayListMusicsMenu::previus:
          loop = false;
-         break;
-      case (int)PlayListMusicsMenu::end:
-         exit(0);
          break;
       default:
          cout << str_red("\nEscolha uma opção válida\n");

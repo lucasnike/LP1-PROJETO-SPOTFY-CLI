@@ -14,4 +14,5 @@ src/MusicsManager.cpp
 src/PlaylistManager.cpp
 src/PlaylistMusicsManager.cpp
 src/TerminalColors.cpp
+src/FileManager.cpp
 )

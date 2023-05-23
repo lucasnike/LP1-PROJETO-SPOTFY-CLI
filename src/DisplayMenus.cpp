@@ -20,7 +20,6 @@ void displayMusicsMenu()
    cout << "[2] - Remover músicas\n";
    cout << "[3] - Listar todas as músicas\n";
    cout << "[4] - Retornar ao menu principal\n";
-   cout << "[5] - Fechar app\n";
    cout << "\n";
 }
 
@@ -32,7 +31,6 @@ void displayPlaylistsMenu()
    cout << "[3] - Remover playlist\n";
    cout << "[4] - Listar todas as playlists\n";
    cout << "[5] - Retornar ao menu principal\n";
-   cout << "[6] - Fechar app\n";
    cout << "\n";
 }
 void displayPlaylistsMusicsMenu(Playlist pl)
@@ -45,6 +43,5 @@ void displayPlaylistsMusicsMenu(Playlist pl)
    cout << "[4] - Mostrar próxima música na playlist\n";
    cout << "[5] - Trocar ordem de músicas\n";
    cout << "[6] - Retornar ao menu anterior\n";
-   cout << "[7] - Fechar app\n";
    cout << "\n";
 }

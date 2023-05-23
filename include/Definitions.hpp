@@ -15,8 +15,7 @@ enum class MusicsMenu
    add = 1,
    remove = 2,
    list = 3,
-   main = 4,
-   end = 5
+   main = 4
 };
 
 /// @brief Enumeração para identificar os itens escolhidos no menu de gerenciamento de playlists dentro do switch
@@ -26,8 +25,7 @@ enum class PlayListMenu
    add = 2,
    remove = 3,
    list = 4,
-   main = 5,
-   end = 6
+   main = 5
 };
 
 /// @brief Enumeração para identificar os itens escolhidos no menu de gerenciamento de uma playlist dentro do switch
@@ -38,8 +36,7 @@ enum class PlayListMusicsMenu
    list = 3,
    next = 4,
    move = 5,
-   previus = 6,
-   end = 7
+   previus = 6
 };
 
 #endif
