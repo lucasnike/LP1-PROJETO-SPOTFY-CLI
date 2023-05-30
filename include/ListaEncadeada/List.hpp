@@ -10,11 +10,13 @@ using namespace std;
 template <typename T>
 class List
 {
-public:
+private:
    /// @brief Inicio da lista encadeada
    Node<T> *head;
    /// @brief Fim da lista encadeada
    Node<T> *tail;
+
+public:
    /// @brief Guarda o tamanho atual da lista
    int size = 0;
    /// @brief Construtor da List inicia tanto o head quanto o tail com nullptr
@@ -62,7 +64,7 @@ public:
    /// @brief Retorna o nó do índice informado
    /// @param index indice do item
    /// @return Item localizado no índice passado como parâmetro
-   Node<T>* at_node(int index)
+   Node<T> *at_node(int index)
    {
       Node<T> *current = head;
 
@@ -112,7 +114,7 @@ public:
                delete temp;
             }
             // Ultimo com três ou mais
-            else if(position + 1 == this->size && this->size > 2)
+            else if (position + 1 == this->size && this->size > 2)
             {
                this->tail = last;
                delete current;
@@ -153,7 +155,6 @@ public:
 
       to_node->value = from_node->value;
       from_node->value = temp;
-      
 
       return true;
    }
@@ -167,13 +168,30 @@ public:
       {
          return false;
       }
-      
+
       for (int i = 0; i < newList->size; i++)
       {
          this->add(newList->at(i));
       }
 
       return true;
+   }
+
+   /// @brief Recebe uma lista com os itens que serão removidos da lista
+   /// @param list Lista com os itens a remover
+   void remove(List<T> *list)
+   {
+      for (int i = 0; i < this->size; i++)
+      {
+         T current = this->at(i);
+         for (int j = 0; i < list->size; j++)
+         {
+            if (current == list->at(j))
+            {
+               this->remove(current);
+            }
+         }
+      }
    }
 };
 

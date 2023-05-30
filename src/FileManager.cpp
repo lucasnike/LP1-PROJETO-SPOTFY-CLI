@@ -85,7 +85,6 @@ void writeData(List<Music *> *musics, List<Playlist *> *playlists, string file)
 
    // Escreve no arquivo a lista de músicas global
    string global = "global;";
-   cout << "Tamanho lista global = " << musics->size << endl;
    for (int i = 0; i < musics->size; i++)
    {
       Music *current = musics->at(i);
