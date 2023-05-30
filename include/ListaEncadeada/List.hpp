@@ -157,6 +157,24 @@ public:
 
       return true;
    }
+
+   /// @brief Recebe uma List como parâmetro e adiciona todos os seus elementos à lista original
+   /// @param newList Uma List do mesmo tipo da lista orginal
+   /// @return Retorna um valor booleano que representa se foi possível ou não unir as duas listas
+   bool extend(List<T> *newList)
+   {
+      if (newList->size < 1)
+      {
+         return false;
+      }
+      
+      for (int i = 0; i < newList->size; i++)
+      {
+         this->add(newList->at(i));
+      }
+
+      return true;
+   }
 };
 
 #endif

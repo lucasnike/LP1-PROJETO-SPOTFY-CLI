@@ -12,7 +12,6 @@ void readData(List<Music *> *musics, List<Playlist *> *playlists, string file)
 
    if (!reader)
    {
-      cout << "Error opening file" << endl;
       return;
    }
 
@@ -81,12 +80,12 @@ void writeData(List<Music *> *musics, List<Playlist *> *playlists, string file)
 
    if (!writter)
    {
-      cout << "Error opening file" << endl;
       return;
    }
 
    // Escreve no arquivo a lista de músicas global
    string global = "global;";
+   cout << "Tamanho lista global = " << musics->size << endl;
    for (int i = 0; i < musics->size; i++)
    {
       Music *current = musics->at(i);
@@ -94,7 +93,10 @@ void writeData(List<Music *> *musics, List<Playlist *> *playlists, string file)
       if (i != musics->size - 1)
          global += ',';
    }
-   writter << global << endl;
+   if (musics->size > 0)
+      writter << global << endl;
+   
+   
 
    // Escreve no arquivo a lista de playlists
    for (int i = 0; i < playlists->size; i++)
