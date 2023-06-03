@@ -26,6 +26,16 @@ public:
       this->tail = nullptr;
    }
 
+   List(List<T> *list)
+   {
+      if (list == nullptr)
+      {
+         return;
+      }
+      
+      auto tempVar = *list->head->value;
+   }
+
    /// @brief Adiciona a lista um valor genérico
    /// @param value Valor a ser adicionado a lista
    void add(T value)
@@ -189,6 +199,7 @@ public:
             if (current == list->at(j))
             {
                this->remove(current);
+               break;
             }
          }
       }
