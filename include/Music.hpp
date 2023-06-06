@@ -23,6 +23,7 @@ public:
    /// @brief Construtor da classe, cria uma música fazendo uma cópia dos valores de uma música existente
    /// @param  Musica ponteira para uma música
    Music(Music*);
+
    /// @brief Função get da propriedade title
    /// @return Título da música
    string getTitle() const { return this->title; }

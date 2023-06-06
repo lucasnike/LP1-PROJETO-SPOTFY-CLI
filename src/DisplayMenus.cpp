@@ -30,7 +30,10 @@ void displayPlaylistsMenu()
    cout << "[2] - Adicionar playlist\n";
    cout << "[3] - Remover playlist\n";
    cout << "[4] - Listar todas as playlists\n";
-   cout << "[5] - Retornar ao menu principal\n";
+   cout << "[5] - Unir playlists\n",
+   cout << "[6] - Ampliar playlist\n",
+   cout << "[7] - Reduzir playlist\n",
+   cout << "[8] - Retornar ao menu principal\n";
    cout << "\n";
 }
 void displayPlaylistsMusicsMenu(Playlist pl)

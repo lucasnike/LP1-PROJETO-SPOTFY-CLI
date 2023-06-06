@@ -25,7 +25,10 @@ enum class PlayListMenu
    add = 2,
    remove = 3,
    list = 4,
-   main = 5
+   join = 5,
+   extend = 6,
+   reduce = 7,
+   main = 8
 };
 
 /// @brief Enumeração para identificar os itens escolhidos no menu de gerenciamento de uma playlist dentro do switch

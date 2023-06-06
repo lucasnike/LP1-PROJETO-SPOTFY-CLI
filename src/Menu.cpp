@@ -107,6 +107,15 @@ void startPlaylistMenu(List<Music *> *musics, List<Playlist *> *playlists)
       case (int)PlayListMenu::list:
          listAllPlaylists(*playlists);
          break;
+      case (int)PlayListMenu::join:
+         joinPlaylists(playlists);
+         break;
+      case (int)PlayListMenu::reduce:
+         reducePlaylist(playlists);
+         break;
+      case (int)PlayListMenu::extend:
+         extendPlaylist(playlists);
+         break;
       case (int)PlayListMenu::main:
          loop = false;
          break;

@@ -21,6 +21,7 @@ public:
    /// @brief Contrutor da classe Playlist
    /// @param nome Nome da playlist
    Playlist(string);
+   Playlist(Playlist*);
    /// @brief Função que adiciona uma música na playlist
    /// @param music Ponteiro para a música que será adicionada
    void addToPlaylist(Music *m) const { this->musics->add(m); }
@@ -36,11 +37,25 @@ public:
    /// @brief Função get da propriedade name
    /// @return Retorna o nome da playlist
    string getName() const { return this->name; }
+   void setName(string);
    /// @brief Retorna o ponteira para a lista de músicas da playlist
    /// @return ponteiro para listas de músicas
    List<Music *> *getMusics() const { return this->musics; }
    /// @brief Imprime em tela o nome da playlist de forma personalizada
    void toString();
+
+   Playlist* operator+(Playlist*);
+   Playlist* operator+(Music);
+
+   Playlist* operator-(Playlist*);
+   Playlist* operator-(Music);
+
+   void operator>>(Music**);
+   void operator<<(Music);
+
+   void extend(Playlist*);
+   void remove(Playlist*);
+
 };
 
 #endif

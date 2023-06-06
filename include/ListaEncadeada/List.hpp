@@ -1,6 +1,7 @@
 #include "Node.hpp"
 #include <iostream>
 #include "TerminalColors.hpp"
+#include <type_traits>
 
 using namespace std;
 
@@ -28,12 +29,8 @@ public:
 
    List(List<T> *list)
    {
-      if (list == nullptr)
-      {
-         return;
-      }
-      
-      auto tempVar = *list->head->value;
+      this->head = list->head;
+      this->tail = list->tail;
    }
 
    /// @brief Adiciona a lista um valor genérico
@@ -191,19 +188,32 @@ public:
    /// @param list Lista com os itens a remover
    void remove(List<T> *list)
    {
-      for (int i = 0; i < this->size; i++)
+      int size = this->size;
+      int i = 0;
+      while (i < size)
       {
          T current = this->at(i);
-         for (int j = 0; i < list->size; j++)
+         for (int j = 0; j < list->size; j++)
          {
             if (current == list->at(j))
             {
                this->remove(current);
-               break;
+               size = this->size;
+               i--;
             }
          }
+         i++;
       }
    }
+
+   List<T> operator + (List<T> list)
+   {
+      List<T> *newList = new List<T>();
+      newList->extend(this);
+      newList->extend(&list);
+      return *newList;
+   }
+
 };
 
 #endif
