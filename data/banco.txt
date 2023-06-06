@@ -1,0 +1,5 @@
+global;Aguas de março:Tom Jobim,Alegria Alegria:Caetano Veloso,As rosas não falam:Cartola,Asa branca:Luiz Gonzaga,Hey Jude:The Beatles,Let it be:The Beatles,Talking to the moon:Bruno Mars,Leão:Marilia Mendonça,Meteoro da paixão:Luan Santana,Back to the USSR:The Beatles,Beat it:Michael Jackson,Begin:Maneskin,Smooth Criminal:Michael Jackson,Revolution 9:The Beatles
+Melhores;Let it be:The Beatles
+Sucessos;Begin:Maneskin,Hey Jude:The Beatles,Meteoro da paixão:Luan Santana
+Nacionais;Aguas de março:Tom Jobim,Alegria Alegria:Caetano Veloso,As rosas não falam:Cartola,Asa branca:Luiz Gonzaga,Leão:Marilia Mendonça,Meteoro da paixão:Luan Santana
+Nacionais + Melhores;Let it be:The Beatles,Aguas de março:Tom Jobim,Alegria Alegria:Caetano Veloso,As rosas não falam:Cartola,Asa branca:Luiz Gonzaga,Leão:Marilia Mendonça,Meteoro da paixão:Luan Santana

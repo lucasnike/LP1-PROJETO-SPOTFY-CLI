@@ -6,6 +6,5 @@ Makefile
 program
 /ignored
 /pdf
-/data/*
 /.fleet
 spotfy_cli
