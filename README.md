@@ -1,6 +1,12 @@
 # GERENCIADOR DE MÚSICAS E PLAYLISTS - CLI
 
 Antes de tudo gostaria de deixar os link do [repositório do github](https://github.com/lucasnike/LP1-PROJETO-SPOTFY-CLI), e da [documentação do projeto](https://lucasnike.github.io/LP1-PROJETO-SPOTFY-CLI/) para consultas mais detalhadas.
+
+## Discentes
+| Nome        | Matricula   |
+| ----------- | ----------- |
+| Lucas Vinicius Pereira da Silva      | 20220060694       |
+| Itallo Muriel Moreira Cortez   | 20220075024        |
 ## O que é?
 <hr/>
 
